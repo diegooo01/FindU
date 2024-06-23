@@ -1,5 +1,5 @@
 export class Users {
-  id: string;
+  _id: string;
   age: number;
   career: string;
   chats: [];
@@ -11,7 +11,7 @@ export class Users {
   level: number;
 
   constructor(
-    id: string,
+    _id: string,
     age: number,
     career: string,
     chats: [],
@@ -22,7 +22,7 @@ export class Users {
     name: string,
     level: number
   ){
-    this.id = id;
+    this._id = _id;
     this.age = age;
     this.career = career;
     this.chats = chats;

@@ -11,7 +11,7 @@
         <p>{{ user.career }}, {{ user.college }}</p>
       </div>
       <div>
-        <button [routerLink]="['/home/users-chat', user.id]">Enviar mensaje</button>
+        <button [routerLink]="['/home/users-chat', user._id]">Enviar mensaje</button>
       </div>
     </mat-card-content>
   </mat-card>
