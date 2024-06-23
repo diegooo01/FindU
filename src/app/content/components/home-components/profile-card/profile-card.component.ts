@@ -17,7 +17,7 @@ import { NgForOf } from '@angular/common';
   selector: 'app-profile-card',
   standalone: true,
   imports: [
-    HttpClientModule, // Importa HttpClientModule aquí
+    HttpClientModule,
     MatCardModule,
     RouterLink,
     NgForOf
@@ -27,14 +27,25 @@ import { NgForOf } from '@angular/common';
 })
 export class ProfileCardComponent implements OnInit {
   users: Users[] = [];
+  filteredUsers: Users[] = [];
+  loggedInUserId: string | null = localStorage.getItem('userId');
 
   constructor(private usersService: UsersService) {}
 
   ngOnInit(): void {
     this.usersService.getUsers().subscribe((data: Users[]) => {
       this.users = data;
+      this.filterUsers();
     }, error => {
       console.error('Error fetching users', error);
     });
+  }
+
+  filterUsers(): void {
+    if (this.loggedInUserId) {
+      this.filteredUsers = this.users.filter(user => user._id !== this.loggedInUserId);
+    } else {
+      this.filteredUsers = this.users;
+    }
   }
 }

@@ -20,7 +20,7 @@ export class ChatsService {
 
   sendMessage(sender: string, receiver: string, content: string, type: string): Observable<any> {
     const url = `${this.baseUrl}/sendMessage`;
-    const payload = { sender, receiver, content, type_content: type };
+    const payload = { sender, receiver, content, type};
     console.log('Sending message payload:', payload); // Log payload
     return this.http.post<any>(url, payload).pipe(
       catchError(this.handleError)

@@ -3,7 +3,7 @@
   <hr>
 </div>
 <div class="profile-cards-container">
-  <mat-card *ngFor="let user of users" class="example-card">
+  <mat-card *ngFor="let user of filteredUsers" class="example-card">
     <img class="background-image" [src]="user.image" alt="Background">
     <mat-card-content>
       <div style="display: flex; align-items: center; justify-content: space-between">

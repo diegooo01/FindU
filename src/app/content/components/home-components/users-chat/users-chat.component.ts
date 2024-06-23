@@ -18,6 +18,7 @@ export class UsersChatComponent implements OnInit {
   messages: any[] = [];
   messageContent: string = '';
   senderId: string | null = localStorage.getItem('userId');
+  senderImage: string | null = null;
 
   constructor(
     private route: ActivatedRoute,
@@ -27,6 +28,11 @@ export class UsersChatComponent implements OnInit {
 
   ngOnInit() {
     this.userId = this.route.snapshot.paramMap.get('id');
+    if (this.senderId) {
+      this.usersService.getUserById(this.senderId).subscribe(sender => {
+        this.senderImage = sender.image;
+      });
+    }
     if (this.userId) {
       this.usersService.getUserById(this.userId).subscribe(user => {
         this.user = user;
@@ -57,5 +63,4 @@ export class UsersChatComponent implements OnInit {
       );
     }
   }
-
 }

@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AccountService } from '../../../services/account/account.service';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { RouterLink } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register-form',
@@ -42,15 +43,30 @@ export class RegisterFormComponent implements OnInit {
   onSubmit() {
     if (this.registerForm.valid) {
       const { name, lastname, email, password, college, career, level, age, image } = this.registerForm.value;
-      let username:string = 'hola'
-      this.accountService.registerUser(name, lastname, email, password, age, college, career, level, image, username ).subscribe({
+      let username:string = 'hola';
+      this.accountService.registerUser(name, lastname, email, password, age, college, career, level, image, username).subscribe({
         next: (response) => {
           console.log('Registration successful', response);
-          this.router.navigate(['/login']);
+          Swal.fire({
+            title: '¡Registro exitoso!',
+            text: 'Tu cuenta ha sido creada exitosamente. Serás redirigido al inicio de sesión.',
+            icon: 'success',
+            confirmButtonText: 'Aceptar'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              this.router.navigate(['/login']);
+            }
+          });
         },
         error: (err) => {
           console.error('Registration failed', err);
           // Add your error handling logic here
+          Swal.fire({
+            title: 'Error en el registro',
+            text: 'Hubo un problema al crear tu cuenta. Por favor, intenta nuevamente.',
+            icon: 'error',
+            confirmButtonText: 'Aceptar'
+          });
         }
       });
     }

@@ -13,13 +13,16 @@
   </div>
   <div class="user-chat-content">
     <div class="user-chat-messages">
-      <div *ngFor="let message of messages">
-        <p>{{ message.user === senderId ? 'You' : user.name }}: {{ message.content }}</p>
+      <div *ngFor="let message of messages" class="message" [ngClass]="{'sent': message.user === senderId, 'received': message.user !== senderId}">
+        <img [src]="message.user === senderId ? senderImage : user.image" alt="User image" class="message-user-image">
+        <div class="message-content">
+          <p>{{ message.content }}</p>
+          <span class="message-time">{{ message.time }}</span>
+        </div>
       </div>
     </div>
     <form (ngSubmit)="sendMessage($event)">
       <input type="text" [(ngModel)]="messageContent" name="messageContent" placeholder="Envía un mensaje..." required>
-      <button type="submit">Send</button>
     </form>
   </div>
 </div>
