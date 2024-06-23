@@ -8,10 +8,10 @@
       </div>
       <div style="display: flex; align-items: center; gap: 0.3rem;">
         <img src="https://github.com/diegooo01/FindU-Images/blob/main/studies-icon.png?raw=true" alt="Study icon" class="study-icon">
-        <p>{{ user.carrer }}, {{ user.college }}</p>
+        <p>{{ user.career }}, {{ user.college }}</p>
       </div>
       <div>
-        <button routerLink="/home/users-chat">Enviar mensaje</button>
+        <button [routerLink]="['/home/users-chat', user._id]">Enviar mensaje</button>
       </div>
     </mat-card-content>
   </mat-card>

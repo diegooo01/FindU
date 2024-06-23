@@ -1,3 +1,10 @@
+.profile-cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem; /* Ajusta el espacio entre las tarjetas según sea necesario */
+  padding: 1rem; /* Añade un poco de padding para darle espacio al contenedor */
+}
+
 .example-card {
   position: relative;
   overflow: hidden;
@@ -11,7 +18,7 @@
   transition: 0.43s;
 }
 
-.example-card:hover{
+.example-card:hover {
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
 }
 
@@ -35,7 +42,7 @@
   box-sizing: border-box; /* Incluye el relleno en el ancho total */
 }
 
-.example-card h1{
+.example-card h1 {
   font-family: "Jost", sans-serif;
   font-size: 2rem;
   font-weight: 600;
@@ -47,17 +54,17 @@
   padding: 8px 0;
 }
 
-.verified-icon{
+.verified-icon {
   width: 50px;
   height: 50px;
 }
 
-.study-icon{
+.study-icon {
   width: 30px;
   height: 30px;
 }
 
-button{
+button {
   background-color: #fff;
   font-family: "Jost", sans-serif;
   text-align: left;
@@ -71,6 +78,18 @@ button{
   transition: 0.43s;
 }
 
-button:hover{
+button:hover {
   color: #c62323;
+}
+
+@media (max-width: 1024px) {
+  .profile-cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 568px) {
+  .profile-cards-container {
+    grid-template-columns: 1fr;
+  }
 }
