@@ -1,6 +1,6 @@
 <mat-toolbar>
   <div class="container-logo">
-    <img src="https://github.com/diegooo01/FindU-Images/blob/main/FindU-brand-rmv-bg-white.png?raw=true" alt="Logo Cambiazo" >
+    <img src="https://github.com/diegooo01/FindU-Images/blob/main/FindU-brand-rmv-bg-white.png?raw=true" alt="Logo Cambiazo">
   </div>
   <nav class="container-nav">
     <ul>
@@ -12,20 +12,13 @@
     <ul>
       <li><a>Hernan Morales</a></li>
       <li>
-        <a routerLink="/login" title="Cerrar sesión">
+        <a (click)="logout()" title="Cerrar sesión">
           <img src="https://github.com/diegooo01/FindU-Images/blob/main/logout-icon.png?raw=true" alt="Log out icon" class="logout-icon">
         </a>
       </li>
     </ul>
   </nav>
-  <!--
-  <div class="container-button">
-    <button *ngIf="!userService.isLogged" class="button-register" routerLink="/login">Iniciar Sesión</button>
-    <div *ngIf="userService.isLogged" mat-card-avatar class="container-img-profile" routerLink="/profile">
-      <img [src]="user['img']">
-    </div>
-  </div>
-  -->
+
   <button mat-icon-button [matMenuTriggerFor]="menu" class="burger">
     <mat-icon style="color: #e4aca8">menu</mat-icon>
   </button>
@@ -41,25 +34,12 @@
         </div>
         <div class="option">
           <p>
-            <a routerLink="/login" title="Cerrar sesión">
+            <a (click)="logout()" title="Cerrar sesión">
               <img src="https://github.com/diegooo01/FindU-Images/blob/main/logout-red-icon.png?raw=true" alt="Log out icon" class="logout-icon">
             </a>
           </p>
         </div>
       </div>
-
     </div>
-    <!--
-    <div class="line"></div>
-    <div class="burger-content">
-      <div class="option">
-        <p><a (click)="onCallCreatePost()" title="Publicar">Publicar</a></p>
-      </div>
-      <div class="option">
-        <p *ngIf="!userService.isLogged"><a routerLink="/login" title="Iniciar Sesión">Iniciar Sesión</a></p>
-        <p *ngIf="userService.isLogged"><a routerLink="/profile" title="Iniciar Sesión">Perfil</a></p>
-      </div>
-    </div>
-    -->
   </mat-menu>
 </mat-toolbar>
