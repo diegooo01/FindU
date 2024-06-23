@@ -30,7 +30,7 @@
 
 .user-chat-content {
   width: 70%;
-  height: 102vh;
+  height: 120vh;
   display: flex;
   flex-direction: column;
   background-image: linear-gradient(#dc9591, #fff);
@@ -60,4 +60,18 @@ form input[type="text"] {
 
 form input:focus{
   outline: none;
+}
+
+@media only screen and (max-width: 750px) {
+  .chat-content {
+    flex-direction: column;
+  }
+
+  .user-chat-info {
+    width: 100%;
+  }
+
+  .user-chat-content {
+    width: 100%;
+  }
 }

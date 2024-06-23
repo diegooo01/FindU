@@ -10,7 +10,7 @@
 
   <nav class="container-nav">
     <ul>
-      <li><a>Hernan Morales</a></li>
+      <li><a>{{ userName }} {{ userLastname }}</a></li>
       <li>
         <a (click)="logout()" title="Cerrar sesión">
           <img src="https://github.com/diegooo01/FindU-Images/blob/main/logout-icon.png?raw=true" alt="Log out icon" class="logout-icon">
@@ -25,7 +25,7 @@
   <mat-menu #menu="matMenu">
     <div class="burger-content">
       <div>
-        <p><a>Hernan Morales</a></p>
+        <p><a>{{ userName }} {{ userLastname }}</a></p>
       </div>
       <div class="line"></div>
       <div style="display: flex; align-items: center; gap: 1rem; margin-top: 1.5rem;">

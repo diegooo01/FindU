@@ -42,7 +42,8 @@ export class RegisterFormComponent implements OnInit {
   onSubmit() {
     if (this.registerForm.valid) {
       const { name, lastname, email, password, college, career, level, age, image } = this.registerForm.value;
-      this.accountService.registerUser(name, lastname, email, password, age, college, career, level, image).subscribe({
+      let username:string = 'hola'
+      this.accountService.registerUser(name, lastname, email, password, age, college, career, level, image, username ).subscribe({
         next: (response) => {
           console.log('Registration successful', response);
           this.router.navigate(['/login']);

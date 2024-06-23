@@ -4,7 +4,7 @@
       <img [src]="user.image" alt="User chat image" class="user-image">
     </div>
     <div class="user-info">
-      <div style="display: flex;justify-content: space-between">
+      <div style="display: flex; justify-content: space-between;">
         <h1>{{ user.name }}, {{ user.age }}</h1>
         <img src="https://github.com/diegooo01/FindU-Images/blob/main/verified-icon.png?raw=true" alt="Verified icon" class="verified">
       </div>
@@ -13,10 +13,13 @@
   </div>
   <div class="user-chat-content">
     <div class="user-chat-messages">
-
+      <div *ngFor="let message of messages">
+        <p>{{ message.user === senderId ? 'You' : user.name }}: {{ message.content }}</p>
+      </div>
     </div>
-    <form action="">
-      <input type="text" placeholder="Envía un mensaje..." required>
+    <form (ngSubmit)="sendMessage($event)">
+      <input type="text" [(ngModel)]="messageContent" name="messageContent" placeholder="Envía un mensaje..." required>
+      <button type="submit">Send</button>
     </form>
   </div>
 </div>

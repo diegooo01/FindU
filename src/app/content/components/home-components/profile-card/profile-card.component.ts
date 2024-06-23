@@ -1,26 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import {
-  MatCardModule,
-  MatCardActions,
-  MatCardContent,
-  MatCardHeader,
-  MatCardImage,
-  MatCardTitleGroup
-} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { RouterLink } from '@angular/router';
 import { UsersService } from '../../../services/users/users.service';
 import { Users } from '../../../model/users/users.model';
-import { NgForOf } from '@angular/common';
+import { NgForOf, CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-profile-card',
   standalone: true,
   imports: [
-    HttpClientModule, // Importa HttpClientModule aquí
+    HttpClientModule,
     MatCardModule,
     RouterLink,
-    NgForOf
+    NgForOf,
+    CommonModule
   ],
   templateUrl: './profile-card.component.html',
   styleUrls: ['./profile-card.component.css']
@@ -31,10 +25,15 @@ export class ProfileCardComponent implements OnInit {
   constructor(private usersService: UsersService) {}
 
   ngOnInit(): void {
-    this.usersService.getUsers().subscribe((data: Users[]) => {
-      this.users = data;
-    }, error => {
-      console.error('Error fetching users', error);
+    const loggedInUserId = localStorage.getItem('userId');
+
+    this.usersService.getUsers().subscribe({
+      next: (data: Users[]) => {
+        this.users = data.filter(user => user._id !== loggedInUserId);
+      },
+      error: (err) => {
+        console.error('Error fetching users', err);
+      }
     });
   }
 }

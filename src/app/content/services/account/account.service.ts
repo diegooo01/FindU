@@ -16,9 +16,9 @@ export class AccountService {
     return this.http.post<any>(url, {email, password});
   }
 
-  registerUser(name: string, lastname: string, email: string, password: string, age: number, college: string, career: string, level: number, image: string) {
+  registerUser(name: string, lastname: string, email: string, password: string, age: number, college: string, career: string, level: number, image: string, username: string) {
     const url = `${this.baseUrl}/register`;
-    return this.http.post<any>(url, {name, lastname, email, password, age, college, career, level, image});
+    return this.http.post<any>(url, {name, lastname, email, password, age, college, career, level, image, username});
   }
 
 }
