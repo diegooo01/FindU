@@ -1,29 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import {
-  MatCard,
+  MatCardModule,
   MatCardActions,
   MatCardContent,
   MatCardHeader,
   MatCardImage,
   MatCardTitleGroup
-} from "@angular/material/card";
-import { RouterLink } from "@angular/router";
-import { UsersService } from "../../../services/users/users.service";
-import { Users } from "../../../model/users/users.model";
-import { NgForOf } from "@angular/common";
+} from '@angular/material/card';
+import { RouterLink } from '@angular/router';
+import { UsersService } from '../../../services/users/users.service';
+import { Users } from '../../../model/users/users.model';
+import { NgForOf } from '@angular/common';
 
 @Component({
   selector: 'app-profile-card',
   standalone: true,
   imports: [
     HttpClientModule, // Importa HttpClientModule aquí
-    MatCard,
-    MatCardHeader,
-    MatCardContent,
-    MatCardActions,
-    MatCardImage,
-    MatCardTitleGroup,
+    MatCardModule,
     RouterLink,
     NgForOf
   ],
