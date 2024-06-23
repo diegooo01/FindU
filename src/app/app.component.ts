@@ -21,6 +21,7 @@ export class AppComponent {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.showNavFooter = !(event.url === '/login'|| event.url === '/register');
+
         /*
         if (event.url === '/login') {
           localStorage.removeItem('id-temporal');
