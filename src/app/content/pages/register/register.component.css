@@ -1,0 +1,22 @@
+.register-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: linear-gradient(#dc9591, #c62323);
+  padding-top: 9.5rem;
+  padding-bottom: 9.5rem;
+}
+
+button img{
+  width: 20px;
+  height: 20px;
+}
+
+@media only screen and (max-width: 600px){
+  .register-content{
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}

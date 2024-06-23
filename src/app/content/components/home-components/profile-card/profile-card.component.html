@@ -1,0 +1,18 @@
+<div class="profile-cards-container">
+  <mat-card *ngFor="let user of users" class="example-card">
+    <img class="background-image" [src]="user.image" alt="Background">
+    <mat-card-content>
+      <div style="display: flex; align-items: center; justify-content: space-between">
+        <h1>{{ user.name }}, {{ user.age }}</h1>
+        <img src="https://github.com/diegooo01/FindU-Images/blob/main/verified-icon.png?raw=true" alt="Verified icon" class="verified-icon">
+      </div>
+      <div style="display: flex; align-items: center; gap: 0.3rem;">
+        <img src="https://github.com/diegooo01/FindU-Images/blob/main/studies-icon.png?raw=true" alt="Study icon" class="study-icon">
+        <p>{{ user.carrer }}, {{ user.college }}</p>
+      </div>
+      <div>
+        <button routerLink="/home/users-chat">Enviar mensaje</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

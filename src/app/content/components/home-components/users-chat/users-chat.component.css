@@ -1,0 +1,63 @@
+.chat-content{
+  display: flex;
+  padding-top: 5rem;
+}
+
+.user-chat-info{
+  width: 30%;
+}
+
+.user-image{
+  width: 100%;
+  height: 450px;
+}
+
+.verified{
+  width: 50px;
+  height: 50px;
+}
+
+.user-info{
+  padding: 1rem;
+  font-family: "Jost", sans-serif;
+}
+
+.user-info h1{
+  font-family: "Jost", sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.user-chat-content {
+  width: 70%;
+  height: 102vh;
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(#dc9591, #fff);
+}
+
+.user-chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+form {
+  display: flex;
+  padding: 1rem;
+  background: #c62323;
+}
+
+form input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-family: "Jost", sans-serif;
+  font-size: 1rem;
+}
+
+form input:focus{
+  outline: none;
+}

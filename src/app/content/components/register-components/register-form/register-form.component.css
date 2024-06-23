@@ -1,0 +1,94 @@
+mat-form-field{
+  width: 450px;
+  display: flex;
+}
+
+button{
+  width: 100%;
+  height: 40px;
+  border-radius: 50px;
+  border: none;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 0.6rem;
+  font-family: "Jost", sans-serif;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+button img{
+  width: 20px;
+  height: 20px;
+}
+
+p{
+  font-family: "Jost", sans-serif;
+  font-weight: 500;
+  color: #fff;
+}
+
+.input-filed{
+  width: 400px;
+  height: 40px;
+  border-radius: 50px;
+  border: 2px solid #fff;
+  padding-left: 0.9rem;
+  margin-bottom: 0.8rem;
+  font-family: "Jost", sans-serif;
+  font-weight: 600;
+  background-color: transparent;
+  color: #fff;
+}
+
+.input-filed::placeholder {
+  color: #fff;
+}
+
+.input-filed:focus {
+  outline: none;
+}
+
+.input-send{
+  display: flex;
+  justify-content: center;
+  padding-top: 1.3rem;
+  padding-bottom: 1.8rem;
+}
+
+.input-send input:hover{
+  cursor: pointer;
+  color: #c62323;
+}
+
+.submit-button{
+  width: 150px;
+  height: 40px;
+  border-radius: 50px;
+  border: none;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 0.5rem;
+  font-family: "Jost", sans-serif;
+  font-weight: 600;
+  transition: 0.43s;
+}
+
+a{
+  color:#fff;
+}
+
+@media only screen and (max-width: 450px){
+  mat-form-field{
+    width: 250px;
+  }
+
+  .input-filed{
+    width: 200px;
+  }
+}
