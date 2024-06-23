@@ -37,7 +37,10 @@ export class LoginFormComponent implements OnInit {
       const { email, password } = this.loginForm.value;
       this.accountService.loginUser(email, password).subscribe({
         next: (response) => {
-          localStorage.setItem('userId', response._id);
+          if(!response.state) throw new Error("Not valid User");
+          let data = response.data;
+          console.log(data)
+          localStorage.setItem('userId', data._id);
           this.router.navigate(['/home']);
         },
         error: (err) => {
